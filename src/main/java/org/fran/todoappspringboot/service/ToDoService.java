@@ -13,13 +13,12 @@ public class ToDoService
     @Autowired
     private ToDoRepository toDoRepository;
 
-    public ToDo createToDo(ToDo toDo)
-    {
-        return toDoRepository.save(toDo);
-    }
+    public ToDo createToDo(ToDo toDo) { return toDoRepository.save(toDo); }
 
     public List<ToDo> getAllToDos()
     {
         return toDoRepository.findAll();
     }
+
+    public ToDo getToDoByID(Long id) { return toDoRepository.findById(id).get(); }
 }

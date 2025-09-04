@@ -3,6 +3,7 @@ package org.fran.todoappspringboot.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Entity
@@ -65,6 +66,11 @@ public class ToDo
     public void setCreatedDate(LocalDateTime createdDate)
     {
         this.createdDate = createdDate;
+    }
+
+    public String getDateWithCustomTimeFormat()
+    {
+        return DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss").format(createdDate);
     }
 
     //Basically ovo se napravi prije spremanja u bazu
